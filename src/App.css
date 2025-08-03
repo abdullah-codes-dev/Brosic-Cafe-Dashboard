@@ -1,0 +1,65 @@
+/* App.css */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background: #f7f8fa;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar stays the same */
+.sidebar {
+  width: 230px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 2px 0 12px #eee;
+  display: flex;
+  flex-direction: column;
+  padding-top: 22px;
+}
+
+/* FIX: Add margin-left to main-content */
+.main-content {
+  flex: 1;
+  padding: 36px 36px 36px 0;
+  margin-left: 24px; /* <--- Add this line for gap (try 24px or 32px for a nice gap) */
+}
+
+/* Responsive styles */
+@media (max-width: 1000px) {
+  .app-layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100vw;
+    min-height: unset;
+  }
+  .main-content {
+    padding: 12px;
+    margin-left: 0; /* Remove margin on small screens */
+  }
+}
+.dashboard-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 22px 0 #ffd6cf88, 0 1.5px 8px 0 #ffcb3890;
+  padding: 38px 34px;
+  margin-right: 22px;
+  margin-bottom: 18px;
+  transition: box-shadow 0.22s, transform 0.17s;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 8px 34px 0 #ffb47b44, 0 6px 24px 0 #ff303066;
+  transform: translateY(-4px) scale(1.025);
+}
+
+.app-layout.dark .dashboard-card {
+  background: #22242a;
+  box-shadow: 0 6px 24px 0 #3e4148cc, 0 2px 9px #ff303026;
+}

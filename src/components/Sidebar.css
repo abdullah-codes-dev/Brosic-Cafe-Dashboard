@@ -1,0 +1,272 @@
+/* Sidebar container */
+.sidebar {
+  width: 230px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 2px 0 12px #eee;
+  display: flex;
+  flex-direction: column;
+  padding-top: 22px;
+  position: relative;
+  border-top-right-radius: 32px;
+  border-bottom-right-radius: 32px;
+  border-right: 2.5px solid #f1eaea; /* Added: separator border */
+  backdrop-filter: blur(6px);
+  transition: background 0.28s, color 0.28s, box-shadow 0.18s;
+}
+
+/* Sidebar logo */
+.logo {
+  display: flex;
+  align-items: center;
+  padding-left: 18px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ff3030;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1.5px solid #ffeaea;
+  max-width: 230px; /* Keep container fixed width */
+  overflow: hidden; /* Prevent logo from overflowing */
+}
+
+/* Updated font for the logo text */
+.logo-title {
+  color: #ff3030;
+  letter-spacing: 1px;
+  font-family: "Berkshire Swash", cursive; /* Updated font-family to Berkshire Swash */
+  font-size: 30px; /* Adjust font size as needed */
+  font-weight: normal;
+  flex-grow: 1; /* Allow title to grow without affecting layout */
+}
+
+/* Sidebar logo img */
+.logo img {
+  width: 90px; /* Increased logo size */
+  height: auto;
+  margin-right: 10px;
+}
+
+/* Sidebar navigation */
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 9px 0;
+}
+
+nav a,
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 10px 28px;
+  border-radius: 13px;
+  color: #232323;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: background 0.18s, color 0.18s, box-shadow 0.15s;
+  margin-bottom: 2px;
+  position: relative;
+}
+
+/* Active/hover state for links */
+nav a.active,
+nav a:hover,
+.sidebar-link:hover {
+  background: #fff2f2;
+  color: #ff3030;
+  box-shadow: 0 2px 9px #ffeaea88;
+  border-left: 5px solid #ff3030;
+}
+
+/* Sidebar dropdown section */
+.sidebar-dropdown {
+  background: #f7f8fa;
+  margin-left: 22px;
+  margin-top: 5px;
+  border-radius: 10px;
+  padding-bottom: 7px;
+}
+
+.sidebar-dropdown li {
+  margin: 0;
+}
+
+.sidebar-dropdown li a,
+.sidebar-subitem {
+  font-size: 1.03rem;
+  font-weight: 400;
+  color: #5b5b5b;
+  opacity: 0.85;
+  padding: 7px 20px 7px 36px;
+  border-radius: 8px;
+  display: block;
+  background: none;
+  transition: background 0.16s, color 0.16s, box-shadow 0.13s;
+  text-decoration: none;
+}
+
+/* Subitem hover/active states */
+.sidebar-dropdown li a:hover,
+.sidebar-dropdown li a.active,
+.sidebar-subitem:hover,
+.sidebar-subitem.active {
+  background: #fff4f4;
+  color: #ff3030;
+  font-weight: 500;
+  box-shadow: 0 1.5px 6px #ffeaea44;
+  border-left: 3px solid #ffcb38;
+}
+
+/* Main section titles in Sidebar */
+.sidebar-section-title {
+  font-weight: 700;
+  font-size: 1.17rem;
+  color: #232323;
+  letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+  padding: 10px 28px;
+  margin-top: 11px;
+  margin-bottom: 2px;
+  cursor: pointer;
+  border-radius: 13px;
+  transition: background 0.2s, color 0.2s;
+  background: none;
+}
+
+/* Hover/active for section titles */
+.sidebar-section-title:hover,
+.sidebar-section-title.active {
+  background: #ffebee;
+  color: #ff3030;
+}
+
+/* Chevron icon for dropdowns */
+.chevron {
+  margin-left: auto;
+  transition: transform 0.2s;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+.sidebar svg,
+.sidebar i {
+  margin-right: 12px;
+  font-size: 1.32rem;
+  color: #ff3030;
+  transition: color 0.18s;
+}
+
+/* Modern blurred background effect */
+.sidebar::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 230px;
+  height: 100vh;
+  z-index: -1;
+  background: linear-gradient(160deg, #ffafbd88 0%, #ffc3a088 100%);
+  filter: blur(18px);
+  opacity: 0.12;
+  border-top-right-radius: 32px;
+  border-bottom-right-radius: 32px;
+  transition: opacity 0.3s;
+}
+
+/* --- DARK MODE SIDEBAR STYLES --- */
+.app-layout.dark .sidebar {
+  background: rgba(24, 28, 37, 0.92) !important;
+  color: #f7f7fb !important;
+  box-shadow: 2px 0 22px #15171bcc;
+  border-top-right-radius: 32px;
+  border-bottom-right-radius: 32px;
+  border-right: 2.5px solid #232834 !important; /* Subtle dark separator */
+  backdrop-filter: blur(8px);
+}
+
+.app-layout.dark .logo,
+.app-layout.dark .logo-title {
+  color: #ffe163 !important;
+}
+
+.app-layout.dark nav a,
+.app-layout.dark .sidebar-link {
+  color: #ffe163 !important;
+  background: none !important;
+}
+
+.app-layout.dark nav a.active,
+.app-layout.dark nav a:hover,
+.app-layout.dark .sidebar-link:hover {
+  background: #232834 !important;
+  color: #ff7a40 !important;
+  border-left: 5px solid #ff6f61;
+  box-shadow: 0 2px 8px #23283499;
+}
+
+.app-layout.dark .sidebar-dropdown {
+  background: #1b202a !important;
+}
+
+.app-layout.dark .chevron {
+  color: #ff3030 !important;
+}
+
+.app-layout.dark .logo {
+  border-bottom: 1.5px solid #393b45;
+}
+
+.app-layout.dark .sidebar-section-title {
+  color: #ffe163 !important;
+}
+
+.app-layout.dark .sidebar-section-title:hover,
+.app-layout.dark .sidebar-section-title.active {
+  background: #232834 !important;
+  color: #ff7a40 !important;
+}
+
+.app-layout.dark .sidebar-dropdown li a,
+.app-layout.dark .sidebar-subitem {
+  color: #f7f7fb !important;
+  opacity: 0.81;
+}
+
+.app-layout.dark .sidebar-dropdown li a:hover,
+.app-layout.dark .sidebar-dropdown li a.active,
+.app-layout.dark .sidebar-subitem:hover,
+.app-layout.dark .sidebar-subitem.active {
+  background: #313846 !important;
+  color: #ffe163 !important;
+  border-left: 3px solid #ffcb38;
+}
+
+.app-layout.dark .sidebar svg,
+.app-layout.dark .sidebar i {
+  color: #ffe163;
+}
+
+.app-layout.dark .sidebar::before {
+  background: linear-gradient(160deg, #ff6f6188 0%, #313b4d99 100%);
+  opacity: 0.18;
+}
+
+/* New section dividers */
+.section-divider {
+  border-bottom: 1px solid #f1eaea; /* Light separator line */
+  margin: 10px 0;
+  width: 100%;
+}
+
+/* Optional: Active section highlight */
+.app-layout.dark .sidebar-section-title.active {
+  background: #232834 !important;
+  color: #ffe163 !important;
+}

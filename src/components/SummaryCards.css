@@ -1,0 +1,118 @@
+.summary-cards {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.summary-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 3px 18px 0 #ffe4da33, 0 1.5px 8px 0 #ffcb3840;
+  padding: 22px 20px;
+  min-width: 200px;
+  max-width: 260px;
+  width: 100%;
+  flex: 0 1 230px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  cursor: pointer;
+  transition: box-shadow 0.18s, transform 0.14s;
+  margin-bottom: 8px;
+}
+
+.summary-card:hover {
+  box-shadow: 0 12px 36px #ffd1b999, 0 3px 14px #ff8181a0;
+  transform: translateY(-7px) scale(1.045);
+  z-index: 2;
+}
+
+.summary-card .icon {
+  font-size: 1.7rem;
+  margin-right: 12px;
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: 0 3px 16px #ffe3e3a8;
+  background: #fff3e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s, box-shadow 0.19s;
+}
+
+/* Icon colors */
+.summary-card.red .icon {
+  color: #ff3030;
+  background: #fff3f3;
+}
+.summary-card.yellow .icon {
+  color: #e6aa00;
+  background: #fffbe0;
+}
+.summary-card.green .icon {
+  color: #19c37d;
+  background: #e8fcf2;
+}
+.summary-card.orange .icon {
+  color: #f07e20;
+  background: #fff7ed;
+}
+
+.value {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 3px;
+  letter-spacing: 1px;
+}
+
+.label {
+  font-size: 1.03rem;
+  font-weight: 600;
+  color: #7c7d88;
+  letter-spacing: 0.1px;
+}
+
+/* Responsive for mobile/tablet */
+@media (max-width: 900px) {
+  .summary-cards {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .summary-card {
+    max-width: 98vw;
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+/* --- Dark Mode --- */
+.app-layout.dark .summary-card {
+  background: #252934;
+  box-shadow: 0 0 18px 3px #ffffff33,
+    /* much softer white glow */ 0 3px 18px #31324177, 0 1.5px 8px #ff303036;
+}
+.app-layout.dark .summary-card .icon {
+  background: #23292f;
+  box-shadow: 0 4px 14px #181821b3;
+}
+.app-layout.dark .summary-card.red .icon {
+  color: #ff7979;
+}
+.app-layout.dark .summary-card.yellow .icon {
+  color: #ffe163;
+}
+.app-layout.dark .summary-card.green .icon {
+  color: #55efc4;
+}
+.app-layout.dark .summary-card.orange .icon {
+  color: #ffbe76;
+}
+.app-layout.dark .value {
+  color: #ffe163;
+}
+.app-layout.dark .label {
+  color: #fff6;
+}
